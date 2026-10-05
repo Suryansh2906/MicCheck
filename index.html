@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MicCheck · Gig tracker for stage anchors</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Your gigs</h1>
+      <p class="count" id="count"></p>
+    </div>
+    <button class="btn" id="addTop" hidden>Add gig</button>
+  </header>
+  <main id="app"></main>
+</div>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h2 id="dlgTitle">New gig</h2>
+    <label for="t">Event title</label>
+    <input id="t" required maxlength="80" placeholder="Annual Fest opening night">
+    <div class="two">
+      <div><label for="d">Date</label><input id="d" type="date" required></div>
+      <div><label for="tm">Time</label><input id="tm" type="time" required></div>
+    </div>
+    <label for="co">Co-anchor (optional)</label>
+    <input id="co" maxlength="40" placeholder="e.g. Niyati">
+    <p class="err" id="err" role="alert" hidden>This exact gig is already on your schedule.</p>
+    <div class="actions">
+      <button type="button" class="btn ghost" id="cancel">Cancel</button>
+      <button type="submit" class="btn" id="saveBtn">Save gig</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="cdlg">
+  <h2>Save these changes?</h2>
+  <ul class="chg" id="chg"></ul>
+  <div class="actions">
+    <button type="button" class="btn ghost" id="discard">Discard changes</button>
+    <button type="button" class="btn" id="confirm">Yes, save changes</button>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
