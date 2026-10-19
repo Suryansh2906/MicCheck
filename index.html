@@ -47,6 +47,20 @@
   </div>
 </dialog>
 
+<!-- Chat widget -->
+<div id="chat-root" aria-live="polite">
+  <button id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-label="Open chat">💬</button>
+  <div id="chat-window" class="chat-window" hidden>
+    <div class="chat-header">Assistant<button id="chat-close" class="chat-close" aria-label="Close chat">✕</button></div>
+    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" placeholder="Ask about the app, e.g., how to add a gig..." autocomplete="off" />
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </div>
+</div>
+
 <script src="script.js"></script>
+<script src="chat.js"></script>
 </body>
 </html>
